@@ -273,6 +273,9 @@
             font-size: 2.2rem;
             font-weight: 700;
             color: #283593;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
         }
 
         .result-details {
@@ -373,6 +376,14 @@
             font-weight: 600;
         }
 
+        .amount-zero {
+            color: #ff5722;
+        }
+
+        .amount-positive {
+            color: #283593;
+        }
+
         @media (max-width: 768px) {
             .app-container {
                 flex-direction: column;
@@ -403,6 +414,10 @@
             .radio-group {
                 flex-direction: column;
                 gap: 10px;
+            }
+            
+            .result-value {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -442,7 +457,7 @@
                     <label for="policyHolderName"><i class="fas fa-user"></i> Policy Holder Name</label>
                     <div class="input-with-icon">
                         <i class="fas fa-user"></i>
-                        <input type="text" id="policyHolderName" class="form-control" placeholder="Enter your full name">
+                        <input type="text" id="policyHolderName" class="form-control" placeholder="Enter your full name" value="John Smith">
                     </div>
                 </div>
                 
@@ -504,14 +519,14 @@
                     <div class="result-title">
                         <i class="fas fa-rupee-sign"></i> Estimated Yearly Premium
                     </div>
-                    <div class="result-value" id="yearlyPremium">₹ 0</div>
+                    <div class="result-value amount-positive" id="yearlyPremium">₹ 0</div>
                 </div>
                 
                 <div class="result-box">
                     <div class="result-title">
                         <i class="fas fa-money-check-alt"></i> Maturity Amount
                     </div>
-                    <div class="result-value" id="maturityAmount">₹ 0</div>
+                    <div class="result-value amount-positive" id="maturityAmount">₹ 0</div>
                 </div>
                 
                 <div class="result-details">
@@ -540,53 +555,4 @@
         </div>
         
         <section class="benefits-section">
-            <h2><i class="fas fa-award"></i> Benefits of LIC Policies</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h3><i class="fas fa-shield-alt"></i> Financial Security</h3>
-                    <p>LIC policies provide financial security to your family in case of unforeseen events, ensuring their future is protected.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3><i class="fas fa-piggy-bank"></i> Savings & Investment</h3>
-                    <p>Combine protection with savings. LIC policies help you build a corpus for future goals like education, marriage, or retirement.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3><i class="fas fa-file-invoice-dollar"></i> Tax Benefits</h3>
-                    <p>Premiums paid are eligible for tax deduction under Section 80C, and maturity benefits are tax-free under Section 10(10D).</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3><i class="fas fa-hand-holding-usd"></i> Loan Facility</h3>
-                    <p>You can avail loans against your LIC policy after it acquires surrender value, providing liquidity during emergencies.</p>
-                </div>
-            </div>
-        </section>
-        
-        <footer>
-            <p>This LIC Calculator is designed for <span class="highlight">educational purposes</span> to help teachers and students understand insurance calculations.</p>
-            <p>Actual LIC policy premiums and benefits may vary based on specific terms and conditions.</p>
-            <p>&copy; 2023 LIC Calculator for Educational Use</p>
-        </footer>
-    </div>
-
-    <script>
-        // DOM Elements
-        const teacherBtn = document.getElementById('teacherBtn');
-        const studentBtn = document.getElementById('studentBtn');
-        const calculateBtn = document.getElementById('calculateBtn');
-        
-        // Result elements
-        const yearlyPremiumElement = document.getElementById('yearlyPremium');
-        const maturityAmountElement = document.getElementById('maturityAmount');
-        const totalPremiumElement = document.getElementById('totalPremium');
-        const totalBonusElement = document.getElementById('totalBonus');
-        const displayTermElement = document.getElementById('displayTerm');
-        const displaySumAssuredElement = document.getElementById('displaySumAssured');
-        const estimatedReturnsElement = document.getElementById('estimatedReturns');
-        
-        // Input elements
-        const policyAmountInput = document.getElementById('policyAmount');
-        cons
+            <h2><i class="
